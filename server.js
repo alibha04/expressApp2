@@ -25,7 +25,10 @@ let books=[]
           books.push(newBook);
           res.status(201).send(newBook);
     })
-  
+    //get a book
+    app.get('/books', (req, res) => {
+        res.json(books);
+      });
    
     //get a book by id
     app.get("/books/:id",(req,res)=>{
