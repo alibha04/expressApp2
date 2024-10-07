@@ -52,17 +52,3 @@ let books=[]
         res.send(books);
     })
 
-  //delete a book by id
-    app.delete("/books/:id",(req,res)=>{
-        const bookIndex = books.findIndex(b => b.id === parseInt(req.params.id));
-  if (bookIndex === -1) {
-    return res.status(404).send('Book not found');
-  }
-
-  books.splice(bookIndex, 1);
-  res.status(204).send();
-    })
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
