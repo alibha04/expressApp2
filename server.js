@@ -39,18 +39,7 @@ let books=[]
         res.json(book);
       
     })
-    //update a book by id 
-    app.put("/books/:id",(req,res)=>{
-        const book = books.find(b => b.id === parseInt(req.params.id));
-        if (!book) {
-          return res.status(404).send('Book not found');
-        }
-        const{title,author}=req.body;
-        book.title=title||book.title;
-        book.author=author||books.author;
-
-        res.send(books);
-    })
+    
 
   //delete a book by id
   app.delete("/books/:id",(req,res)=>{
