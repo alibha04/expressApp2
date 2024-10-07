@@ -30,7 +30,13 @@ let books=[]
         res.json(books);
       });
    
-    
+    //get a book by id
+    app.get("/books/:id",(req,res)=>{
+        const book = books.find(b => b.id === parseInt(req.params.id));
+        if (!book) {
+          return res.status(404).send('Book not found');
+        }
+        res.json(book);
       
     })
     //update a book by id 
