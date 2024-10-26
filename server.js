@@ -19,7 +19,7 @@ let books=[]
     app.post("/books",(req,res)=>{
         const {title,author}=req.body;
         if (!title || !author) {
-            return res.status(400).send('Missing title or author');
+            // return res.status(400).send('Missing title or author');
           }
           const newBook = { id: books.length + 1, title, author };
           books.push(newBook);
