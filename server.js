@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 let books=[]
-//post a book
+post a book
     app.post("/books",(req,res)=>{
         const {title,author}=req.body;
         if (!title || !author) {
